@@ -1,0 +1,177 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "bar de drinks",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": [
+                      "cancelar"
+                  ]
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": [
+                      "ajuda",
+                      "Como funciona"
+                  ]
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": [
+                      "não obrigado",
+                      "obrigado",
+                      "pare"
+                  ]
+              },
+              {
+                  "name": "RandomDrinkIntent",
+                  "slots": [],
+                  "samples": [
+                      "aleatório",
+                      "o que voce sugere",
+                      "tanto faz",
+                      "qualquer um",
+                      "drink aleatório",
+                      "me manda um drink qualquer"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": [
+                      "sair"
+                  ]
+              },
+              {
+                  "name": "DrinkRecipeIntent",
+                  "slots": [
+                      {
+                          "name": "drink",
+                          "type": "Drink",
+                          "samples": [
+                              "é {drink}",
+                              "quero um {drink}",
+                              "{drink}"
+                          ]
+                      }
+                  ],
+                  "samples": [
+                      "um {drink} por favor",
+                      "gostaria de um {drink}",
+                      "quero um {drink}",
+                      "quero uma {drink}",
+                      "como faço um {drink}",
+                      "como faz um {drink}",
+                      "{drink}",
+                      "o que preciso para um {drink}",
+                      "como faz uma {drink}"
+                  ]
+              }
+          ],
+          "types": [
+              {
+                  "name": "Drink",
+                  "values": [
+                      {
+                          "name": {
+                              "value": "Caipirinha",
+                              "synonyms": [
+                                  "Caipiroska"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Pisco Sour"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Cuba Libre"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Bloody Mary"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Sex on The Beach"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Piña Colada",
+                              "synonyms": [
+                                  "pinha colada",
+                                  "pina colada"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Cosmopolitan"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Mojito"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Margarita"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "Dry Martini"
+                          }
+                      }
+                  ]
+              }
+          ]
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "DrinkRecipeIntent",
+                  "confirmationRequired": false,
+                  "prompts": {},
+                  "slots": [
+                      {
+                          "name": "drink",
+                          "type": "Drink",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.114464081720.1422810958221"
+                          }
+                      }
+                  ]
+              }
+          ],
+          "delegationStrategy": "ALWAYS"
+      },
+      "prompts": [
+          {
+              "id": "Elicit.Slot.114464081720.1422810958221",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "Hmm...não conheço esse drink ainda, tem algum outro?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "Qual o nome do coquetel?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "Qual o nome do drink?"
+                  }
+              ]
+          }
+      ]
+  }
+}
