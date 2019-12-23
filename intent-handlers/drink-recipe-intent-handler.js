@@ -17,7 +17,7 @@ const DrinkRecipeIntentHandler = {
         .getResponse();
     }
 
-    const speakOutput = 'Qual drink você quer?';
+    const speakOutput = 'Hmm não conheço esse. Tem algum outro drink?';
 
     return handlerInput.responseBuilder
       .speak(speakOutput)
@@ -34,7 +34,8 @@ const RandomDrinkIntentHandler = {
     const drink = getRandom(Drink.all());
     console.log(`RandomDrinkIntentHandler | drink: ${drink.name}`);
 
-    const speakOutput = getDrinkInstructions(drink);
+    const firstSentence = `Sugiro ${drink.nameWithDefinite}! `;
+    const speakOutput = firstSentence + getDrinkInstructions(drink);
 
     return handlerInput.responseBuilder
       .speak(speakOutput)
