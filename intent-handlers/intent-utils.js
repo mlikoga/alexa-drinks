@@ -5,6 +5,12 @@ function isIntent(handlerInput, intentName) {
           && Alexa.getIntentName(handlerInput.requestEnvelope) === intentName;
 }
 
+function arrayToString(array) {
+  return array
+    .join(', ')
+    .replace(/, ([^,]*)$/, ' e $1');
+}
+
 function buildRandomOutput(...sentencesLists) {
   return sentencesLists.reduce((speakOutput, sentenceList) => `${speakOutput} ${getRandom(sentenceList)}`, '');
 }
@@ -14,5 +20,6 @@ function getRandom(list) {
 }
 
 exports.isIntent = isIntent;
+exports.arrayToString = arrayToString;
 exports.buildRandomOutput = buildRandomOutput;
 exports.getRandom = getRandom;

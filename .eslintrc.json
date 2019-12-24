@@ -16,6 +16,7 @@
         "ecmaVersion": 2018
     },
     "rules": {
+        "arrow-parens": ["error", "as-needed"],
         "no-console": ["error", { "allow": ["warn", "error", "log"] }],
         "no-use-before-define": ["error", { "functions": false, "classes": true }]
     }

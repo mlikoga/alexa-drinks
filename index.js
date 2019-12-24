@@ -8,6 +8,7 @@ const {
 } = require('./intent-handlers/standard-handlers');
 const LaunchRequestHandler = require('./intent-handlers/launch-request-handler');
 const { DrinkRecipeIntentHandler, RandomDrinkIntentHandler } = require('./intent-handlers/drink-recipe-intent-handler');
+const ListDrinkIntentHandler = require('./intent-handlers/list-drinks-intent-handler');
 
 // The SkillBuilder acts as the entry point for your skill, routing all request and response
 // payloads to the handlers above. Make sure any new handlers or interceptors you've
@@ -16,6 +17,7 @@ exports.handler = Alexa.SkillBuilders.custom()
   .addRequestHandlers(
     LaunchRequestHandler,
     DrinkRecipeIntentHandler,
+    ListDrinkIntentHandler,
     RandomDrinkIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
